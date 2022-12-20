@@ -1,0 +1,24 @@
+# This workflow is usesd to test resusable workflow using input/output
+
+name: Run Reusable-Workflow 
+run-name: Run of "Reusable-Workflow" by @${{ github.actor }} triggered on @${{ github.event_name }}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # Reusable workflows can only be called as a job
+  call-Reusable-Workflow-in-local-repo:
+    uses: ./.github/workflows/Reusable-Workflow.yml
+    with:
+      input_var: MyInputValue
+  
+  Print-the-output:
+    name: Prints out the output value
+    needs: call-Reusable-Workflow-in-local-repo
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print out the output value from reusable workflow
+        run: echo "The output is = ${{ needs.call-Reusable-Workflow-in-local-repo.outputs.output_var }}"
+        shell: bash

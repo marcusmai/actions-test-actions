@@ -1,0 +1,36 @@
+# This is a reusable workflow that handels input/output
+
+name: Reusable workflow
+run-name: Direct run of "Reusable workflow" by @${{ github.actor }} triggered on @${{ github.event_name }}
+
+on:
+  workflow_call:
+    inputs:
+      input_var:
+        type: string 
+        description: "This is the input variable"
+    outputs:
+      output_var:
+        description: "This is the output variable"
+        value: ${{ jobs.PrintOutInputVariable.outputs.output1 }}
+  workflow_dispatch:
+
+jobs:
+  PrintOutInputVariable:
+    name: Runs a reusable Workflow to test input and output variables
+    runs-on: ubuntu-latest
+    outputs:
+      Output1: ${{ steps.set-output-var.outputs.value }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Print out the input_var
+      run: echo "The input is = ${{ inputs.input_var }}"
+      shell: bash
+
+    - name: Set output variable
+      id: set-output-var
+      ## run: echo "::set-output name=value::MyOutputValue" ## Deprecated way of setting output
+      run: echo "value=MyOutputValue" >> $GITHUB_OUTPUT
+      shell: bash
