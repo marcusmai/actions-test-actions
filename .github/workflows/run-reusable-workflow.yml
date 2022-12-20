@@ -9,7 +9,7 @@ on:
 jobs:
   # Reusable workflows can only be called as a job
   call-Reusable-Workflow-in-local-repo:
-    uses: ./.github/workflows/Reusable-Workflow.yml
+    uses: ./.github/workflows/reusable-workflow.yml
     with:
       input_var: MyInputValue
   
