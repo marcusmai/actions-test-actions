@@ -16,7 +16,7 @@ jobs:
 
       - name: Run the Composite Action that will print the input_var
         id: myCompositeAction
-        uses: marcusmai-telia/actions-composite-action@main
+        uses: marcusmai/actions-composite-action@main
         with:
           input_var: MyInputValue
 

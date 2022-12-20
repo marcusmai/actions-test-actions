@@ -16,7 +16,7 @@ jobs:
 
       - name: Run the JavaScript Action Basic that will print the varible who-to-greet
         id: myJavaScriptAction
-        uses: marcusmai-telia/actions-javascript-action-basic@main
+        uses: marcusmai/actions-javascript-action-basic@main
         with:
           who-to-greet: 'Telia'
           my-Secret: ${{ secrets.MY_TEST_SECRET }}
