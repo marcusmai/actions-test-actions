@@ -18,7 +18,7 @@ jobs:
         id: myTypeScriptAction
         uses: marcusmai/actions-typescript-action@main
         with:
-          environment: 'Dev'
+          environment: 'Prod'
 
       #- name: Print out the variable time from TypeScript Action Basic
       #  run: echo "The output is = ${{ steps.myTypeScriptAction.outputs.time }}"
