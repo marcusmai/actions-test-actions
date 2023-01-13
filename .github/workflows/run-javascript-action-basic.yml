@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run the JavaScript Action Basic that will print the varible who-to-greet
+      - name: Run the JavaScript Action Basic that will print the variable who-to-greet
         id: myJavaScriptAction
         uses: marcusmai/actions-javascript-action-basic@main
         with:
