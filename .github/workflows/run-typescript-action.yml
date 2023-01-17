@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run the TypeScript Action that will print the variable who-to-greet
+      - name: Run the TypeScript Action that will print the input variable "environment"
         id: myTypeScriptAction
         uses: marcusmai/actions-typescript-action@main
         with:
