@@ -20,6 +20,6 @@ jobs:
         with:
           environment: 'Prod'
 
-      #- name: Print out the variable time from TypeScript Action Basic
-      #  run: echo "The output is = ${{ steps.myTypeScriptAction.outputs.time }}"
-      #  shell: bash
+      - name: Print out the outputResult variable from TypeScript Action
+        run: echo "The output is = ${{ steps.myTypeScriptAction.outputs.outputResult }}"
+        shell: bash
