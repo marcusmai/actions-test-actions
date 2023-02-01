@@ -16,7 +16,7 @@ jobs:
 
       - name: Run the TypeScript Action that will print the input variable "environment"
         id: myTypeScriptAction
-        uses: marcusmai/actions-typescript-action@v1
+        uses: marcusmai/actions-typescript-action@main
         with:
           environment: 'Prod'
 
