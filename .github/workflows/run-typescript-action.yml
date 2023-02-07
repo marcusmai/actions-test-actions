@@ -14,12 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run the TypeScript Action that will print the variable who-to-greet
+      - name: Run the TypeScript Action that will print the input variable "environment"
         id: myTypeScriptAction
-        uses: marcusmai/actions-typescript-action@main
+        uses: marcusmai/actions-typescript-action@v1
         with:
           environment: 'Prod'
 
-      #- name: Print out the variable time from TypeScript Action Basic
-      #  run: echo "The output is = ${{ steps.myTypeScriptAction.outputs.time }}"
-      #  shell: bash
+      - name: Print out the outputResult variable from TypeScript Action
+        run: echo "The output is = ${{ steps.myTypeScriptAction.outputs.outputResult }}"
+        shell: bash
