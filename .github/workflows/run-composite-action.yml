@@ -1,4 +1,4 @@
-# This workflow is usesd to test Composite Action using input/output
+# This workflow is usesd to test Composite Action using input/output...
 
 name: Run Composite Action
 run-name: Run of "Composite Action" by @${{ github.actor }} triggered on @${{ github.event_name }}
